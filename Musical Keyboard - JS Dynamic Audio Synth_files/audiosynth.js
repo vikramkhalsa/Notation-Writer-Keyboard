@@ -300,6 +300,11 @@ function AudioSynthView() {
 				myTextField.insertAdjacentHTML('beforeend','</br>');
 			if (e.keyCode == 32)
 				myTextField.insertAdjacentHTML('beforeend',' ');
+			if (e.keyCode == 8){
+				var text = myTextField.innerHTML;
+				var newtext = text.substring(0,text.length - 1);
+				myTextField.innerHTML = newtext;
+			}
 			return;
 		}
 
