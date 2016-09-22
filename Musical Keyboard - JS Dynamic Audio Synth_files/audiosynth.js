@@ -295,6 +295,14 @@ function AudioSynthView() {
 			}
 		}
 		keysPressed.push(e.keyCode);
+		if (!(e.keyCode in keyboard_indian)){
+			if (e.keyCode == 13)
+				myTextField.insertAdjacentHTML('beforeend','</br>');
+			if (e.keyCode == 32)
+				myTextField.insertAdjacentHTML('beforeend',' ');
+			return;
+		}
+
 		
 		//myTextField.innerHTML = myTextField.innerHTML + keyboard_indian[e.keyCode];
 		if (spaces){
@@ -306,7 +314,6 @@ function AudioSynthView() {
 		
 
 		switch(e.keyCode) {
-		
 			// left
 			case 37:
 				fnChangeOctave(-1);
